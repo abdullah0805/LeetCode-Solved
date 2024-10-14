@@ -7,10 +7,10 @@ public:
         std::priority_queue<int> maxHeap(nums.begin(), nums.end());
         long long score = 0;
         for(int i = 0;i < k;i++){
-            long double top = maxHeap.top();
+            double top = maxHeap.top();
             score += top;
             maxHeap.pop();
-            long long newval = ceil((top / float(3)));
+            int newval = ceil((top / float(3)));
             maxHeap.push(newval);
         }
         return score;
